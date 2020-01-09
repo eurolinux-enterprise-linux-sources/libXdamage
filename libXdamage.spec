@@ -1,7 +1,7 @@
 Summary: X Damage extension library
 Name: libXdamage
-Version: 1.1.2
-Release: 1%{?dist}
+Version: 1.1.3
+Release: 4%{?dist}
 License: MIT
 Group: System Environment/Libraries
 URL: http://www.x.org
@@ -13,7 +13,7 @@ BuildRequires: pkgconfig(xfixes)
 BuildRequires: pkgconfig(damageproto) >= 1.1.0
 
 %description
-X.Org X11 libXdamage runtime library
+X.Org X11 libXdamage runtime library.
 
 %package devel
 Summary: Development files for %{name}
@@ -21,14 +21,14 @@ Group: Development/Libraries
 Requires: %{name} = %{version}-%{release}
 
 %description devel
-X.Org X11 libXdamage development package
+X.Org X11 libXdamage development package.
 
 %prep
 %setup -q
 
 %build
 %configure --disable-static
-make %{?_smp_mflags}
+make V=1 %{?_smp_mflags}
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -57,6 +57,22 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/pkgconfig/xdamage.pc
 
 %changelog
+* Thu Jul 19 2012 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 1.1.3-4
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_18_Mass_Rebuild
+
+* Fri Jan 13 2012 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 1.1.3-3
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_17_Mass_Rebuild
+
+* Mon Feb 07 2011 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 1.1.3-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_15_Mass_Rebuild
+
+* Wed Jun 09 2010 Peter Hutterer <peter.hutterer@redhat.com> 1.1.3-1
+- libXdamage 1.1.3
+
+* Wed Oct 21 2009 Parag <paragn@fedoraproject.org> - 1.1.2-2
+- Merge-Review #226067
+- make is not verbose
+
 * Wed Oct 07 2009 Adam Jackson <ajax@redhat.com> 1.1.2-1
 - libXdamage 1.1.2
 
