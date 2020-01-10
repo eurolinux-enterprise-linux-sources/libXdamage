@@ -1,7 +1,7 @@
 Summary: X Damage extension library
 Name: libXdamage
 Version: 1.1.4
-Release: 4.1%{?dist}
+Release: 3%{?dist}
 License: MIT
 Group: System Environment/Libraries
 URL: http://www.x.org
@@ -60,12 +60,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/pkgconfig/xdamage.pc
 
 %changelog
-* Wed Feb 12 2014 Adam Jackson <ajax@redhat.com> 1.1.4-4.1
-- Mass rebuild
-
-* Fri Dec 27 2013 Daniel Mach <dmach@redhat.com> - 1.1.4-4
-- Mass rebuild 2013-12-27
-
 * Thu Mar 07 2013 Peter Hutterer <peter.hutterer@redhat.com> - 1.1.4-3
 - autoreconf for aarch64
 
